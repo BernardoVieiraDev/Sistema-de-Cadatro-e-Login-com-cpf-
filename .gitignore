@@ -9,3 +9,4 @@ Thumbs.db
 venv/
 env/
 *.egg-info/
+user_registry
