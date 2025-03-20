@@ -6,11 +6,11 @@ def apply_cpf_mask(event, entry):
     texto = ''.join(c for c in texto if c.isdigit())
     
     # Aplica a máscara sem cortar o texto
-    if len(texto) >= 3:
+    if len(texto) >= 4:
         texto = f'{texto[:3]}.{texto[3:]}'
-    if len(texto) >= 7:
+    if len(texto) >= 8:
         texto = f'{texto[:7]}.{texto[7:]}'
-    if len(texto) >= 11:
+    if len(texto) >= 12:
         texto = f'{texto[:11]}-{texto[11:13]}'
     
     entry.delete(0, "end")
