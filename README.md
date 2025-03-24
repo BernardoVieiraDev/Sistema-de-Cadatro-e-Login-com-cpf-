@@ -1,6 +1,3 @@
-
-
-```markdown
 # Sistema de Login e Cadastro com Validação de CPF
 
 Este é um sistema de login e cadastro desenvolvido em Python utilizando a biblioteca Tkinter para a interface gráfica, SQLite para armazenamento de dados e uma validação de CPF que garante que o CPF informado seja válido.
@@ -28,10 +25,18 @@ Este é um sistema de login e cadastro desenvolvido em Python utilizando a bibli
 - **Tkinter**: Biblioteca para a construção da interface gráfica.
 - **SQLite**: Banco de dados utilizado para armazenar os dados dos usuários (nome, CPF, senha).
 - **Validação de CPF**: A validação é feita de forma que o CPF é verificado quanto à sua existência e estrutura através de cálculos dos dois últimos dígitos verificadores.
+- **Black**: Ferramenta de formatação automática do código.
+- **isort**: Organiza automaticamente as importações do projeto.
+- **Flake8**: Analisa o código para garantir boas práticas e qualidade.
+
 
 ## Requisitos
 
-Antes de rodar o projeto, é necessário instalar as dependências. Você pode instalar as dependências utilizando o arquivo `requirements.txt`.
+1. **Versão com Executável**
+   Se você preferir usar a versão com executável do sistema, não é necessário instalar o Python nem as dependências. Basta baixar o arquivo executável `run.exe` e executá-lo diretamente no Windows.
+
+2. **Versão com Código-Fonte**
+   Se você optar por rodar o projeto a partir do código-fonte, será necessário instalar as dependências listadas no arquivo `requirements.txt`.
 
 ### Instalação das Dependências
 
@@ -40,6 +45,7 @@ Crie e ative um ambiente virtual (opcional, mas recomendado):
 ```bash
 python -m venv venv
 source venv/bin/activate  # Para Linux/Mac
+
 venv\Scripts\activate     # Para Windows
 ```
 
@@ -49,21 +55,9 @@ Instale as dependências:
 pip install -r requirements.txt
 ```
 
-### Arquivos Relevantes
-
-- **login_interface.py**: Interface de login do sistema.
-- **registration_interface.py**: Interface de cadastro de novos usuários.
-- **home_interface.py**: Interface inicial após login.
-- **banco_usuarios.py**: Contém funções para interação com o banco de dados SQLite.
-- **cpfValidation.py**: Funções relacionadas à validação de CPF.
-- **utils.py**: Funções auxiliares como carregar imagens.
-- **executavel/**: Pasta contendo o arquivo executável gerado.
-
 ## Como Rodar o Projeto
 
 ### Versão com Executável
-
-Se você preferir usar a versão com executável do sistema, você pode baixar o arquivo executável diretamente da pasta **executavel/** e rodá-lo em seu sistema. Não é necessário instalar o Python nem as dependências para usar o executável.
 
 1. Baixe o arquivo executável da pasta `executavel/`.
 2. Dê permissão de execução ao arquivo (caso necessário):
@@ -71,7 +65,7 @@ Se você preferir usar a versão com executável do sistema, você pode baixar o
    - No Linux/Mac:
 
    ```bash
-   chmod +x sistema_login_cadastro.exe
+   chmod +x run.exe
    ```
 
    - No Windows, o arquivo executável pode ser executado diretamente.
@@ -79,8 +73,8 @@ Se você preferir usar a versão com executável do sistema, você pode baixar o
 3. Execute o arquivo:
 
    ```bash
-   ./sistema_login_cadastro.exe  # No Linux/Mac
-   sistema_login_cadastro.exe    # No Windows
+   ./run.exe  # No Linux/Mac
+   run.exe    # No Windows
    ```
 
 ### Versão com Código-Fonte
@@ -99,10 +93,10 @@ git clone https://github.com/seu-usuario/seu-repositorio.git
 cd seu-repositorio
 ```
 
-3. Execute o arquivo de login:
+3. Execute o arquivo principal:
 
 ```bash
-python login_interface.py
+python run.py
 ```
 
 O sistema abrirá a interface de login, onde você poderá se cadastrar ou fazer login se já tiver uma conta.
@@ -112,15 +106,23 @@ O sistema abrirá a interface de login, onde você poderá se cadastrar ou fazer
 ```
 sistema-login-cadastro/
 │
-├── banco_usuarios.py        # Lógica de interação com o banco de dados
-├── cpfValidation.py         # Funções de validação de CPF
-├── home_interface.py        # Interface após login
-├── login_interface.py       # Interface de login
-├── registration_interface.py# Interface de cadastro
-├── utils.py                 # Funções auxiliares como carregar imagens
-├── requirements.txt         # Arquivo de dependências
-├── executavel/              # Pasta contendo o arquivo executável
-│   └── sistema_login_cadastro.exe # Executável gerado
-└── README.md                # Documentação do projeto
+├── assets/                 # Pasta para arquivos de imagem
+│   ├── eye.png             # Ícone para mostrar senha
+│   ├── hide.png            # Ícone para ocultar senha
+│
+├── executavel/             # Pasta contendo o arquivo executável
+│   └── run.exe
+│
+├── models/                 # Lógica principal do sistema
+│   ├── __init__.py         # Arquivo de inicialização do módulo
+│   ├── banco_usuarios.py   # Interação com o banco de dados
+│   ├── cpf.py              # Classe de validação de CPF
+│   ├── home_interface.py   # Interface após login
+│   ├── login_interface.py  # Interface de login
+│   ├── registration_interface.py  # Interface de cadastro
+│   ├── utils.py            # Funções auxiliares como carregar imagens
+│
+├── requirements.txt        # Arquivo de dependências
+├── run.py                  # Arquivo principal para execução do sistema
+└── README.md               # Documentação do projeto
 ```
-
